@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-RUN mkdir /src/securedapi-linux
+RUN mkdir -p /src/securedapi-linux
 COPY ["securedapi-linux/securedapi-linux.csproj", "securedapi-linux/"]
 RUN dotnet restore "securedapi-linux/securedapi-linux.csproj"
 COPY . .
